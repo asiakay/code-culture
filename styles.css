@@ -1,0 +1,202 @@
+/* ===================== */
+/* PORTAL CORE STYLES */
+/* ===================== */
+:root {
+  --navy: #0a1a2f;
+  --teal: #00ffd0;
+  --sand: #e6d5b8;
+  --magenta: #ff00aa;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--navy);
+  color: var(--sand);
+  font-family: 'Courier New', monospace;
+  line-height: 1.6;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#portal-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===================== */
+/* HEADER STYLES */
+/* ===================== */
+.portal-header {
+  padding: 2rem;
+  border-bottom: 1px solid var(--teal);
+  position: relative;
+  z-index: 10;
+}
+
+.portal-header h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  text-shadow: 0 0 10px var(--teal);
+}
+
+.teal { color: var(--teal); }
+.magenta { color: var(--magenta); }
+
+/* ===================== */
+/* NAVIGATION SPARKS */
+/* ===================== */
+.frequency-nav {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.nav-spark {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--sand);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px var(--sand);
+}
+
+.nav-spark:hover {
+  transform: scale(1.5);
+  background: var(--magenta);
+  box-shadow: 0 0 15px var(--magenta);
+}
+
+/* ===================== */
+/* SECTION CONTAINERS */
+/* ===================== */
+#portal-sections {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: calc(100vh - 200px); /* Adjust based on header/footer height */
+}
+
+section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+section.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/* Initial active section */
+#resistance {
+  opacity: 1;
+  z-index: 1;
+}
+
+.code-canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* ===================== */
+/* CONTENT BLOCKS */
+/* ===================== */
+.content {
+  padding: 3rem;
+  max-width: 600px;
+  background-color: rgba(10, 26, 47, 0.7);
+  border-left: 3px solid var(--teal);
+  margin: 2rem;
+  backdrop-filter: blur(5px);
+}
+
+#reflection .content {
+  border-left-color: var(--magenta);
+}
+
+#realignment .content {
+  border-left-color: var(--teal);
+}
+
+/* ===================== */
+/* FOOTER STYLES */
+/* ===================== */
+.portal-footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--magenta);
+  position: relative;
+  z-index: 10;
+}
+
+.signal-meter {
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--navy), var(--teal), var(--magenta));
+  margin-top: 1rem;
+  animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* ===================== */
+/* MOBILE RESPONSIVENESS */
+/* ===================== */
+@media (max-width: 768px) {
+  .portal-header {
+    padding: 1rem;
+  }
+  
+  .frequency-nav {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .nav-spark {
+    width: 20px;
+    height: 20px;
+  }
+  
+  #portal-sections {
+    height: calc(100vh - 160px);
+  }
+  
+  .content {
+    padding: 1.5rem;
+    margin: 1rem;
+    max-width: 90%;
+  }
+}
+
+/* Debug outlines (remove after testing) */
+/*section {
+  outline: 2px dashed rgba(255, 0, 0, 0.3);
+}
+section.active {
+  outline: 2px dashed rgba(0, 255, 0, 0.5);
+} */

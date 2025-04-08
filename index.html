@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CODE_CULTURE_PORTAL</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="portal-container">
+    <header class="portal-header">
+      <h1>// CODE_<span class="teal">CULTURE</span>_<span class="magenta">PORTAL</span></h1>
+    </header>
+    
+    <nav class="frequency-nav">
+      <div class="nav-spark" data-section="resistance"></div>
+      <div class="nav-spark" data-section="reflection"></div>
+      <div class="nav-spark" data-section="realignment"></div>
+    </nav>
+    
+    <main id="portal-sections">
+      <!-- RESISTANCE SECTION -->
+      <section id="resistance" class="active">
+        <div class="code-canvas" id="resistance-canvas"></div>
+        <div class="content">
+          <h2>Resistance Patterns</h2>
+          <p>Algorithms of dissent emerge from the noise...</p>
+        </div>
+      </section>
+      
+      <!-- REFLECTION SECTION -->
+      <section id="reflection">
+        <div class="code-canvas" id="reflection-canvas"></div>
+        <div class="content">
+          <h2>Reflection Nodes</h2>
+          <p>Data mirrors showing distorted truths. Drag to warp reality.</p>
+          <div class="slider-container">
+            <label for="distortion">Mirror Distortion:</label>
+            <input type="range" id="distortion" min="0" max="100" value="50">
+          </div>
+        </div>
+      </section>
+      
+      <!-- REALIGNMENT SECTION -->
+      <section id="realignment">
+        <div class="code-canvas" id="realignment-canvas"></div>
+        <div class="content">
+          <h2>Realignment Signals</h2>
+          <p>Tune your frequency. Allow microphone access for full experience.</p>
+          <button id="audio-toggle">Activate Audio Sensors</button>
+          <div class="frequency-bars"></div>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="portal-footer">
+      <p>Follow the signal. Tap into the frequency.</p>
+      <div class="signal-meter"></div>
+    </footer>
+  </div>
+
+  <script src="portal.js"></script>
+</body>
+</html>
